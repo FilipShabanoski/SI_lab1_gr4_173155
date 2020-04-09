@@ -5,18 +5,85 @@ class Point {
 	//TODO add new variable
 	String pointsColor;
 
-	//TODO constructor
+		//TODO constructor
+
+	public Point(String id, double x, double y, String pointsColor) {
+		this.id = id;
+		this.x = x;
+		this.y = y;
+		this.pointsColor = pointsColor;
+	}
+
 
 	//TODO setters and getters
 
+
+	public String getId() {
+		return id;
+	}
+
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public String getPointsColor() {
+		return pointsColor;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public void setPointsColor(String pointsColor) {
+		this.pointsColor = pointsColor;
+	}
+
 	public void move (char xDirection, char yDirection) {
 		//TODO
+		if(xDirection=='R' && yDirection=='U'){
+			x++;
+			y++;
+		}
+		if(xDirection=='R' && yDirection=='D'){
+			x++;
+			y--;
+		}
+		if(xDirection=='L' && yDirection=='U'){
+			x--;
+			y++;
+		}
+		if(xDirection=='L' && yDirection=='D'){
+			x--;
+			y--;
+		}
+		if(xDirection=='R' && yDirection==' '){
+			x++;
+		}
+		if(xDirection=='L' && yDirection==' '){
+			x--;
+		}
+		if(xDirection==' ' && yDirection=='U'){
+			y++;
+		}
+		if(xDirection==' ' && yDirection=='D'){
+			y--;
+		}
 	}
 
 	public void draw () {
 		//TODO
+		System.out.println("Tochka: "+ "("+ id+","+x+","+y+ ","+pointsColor+")");
 	}
-
-
-
 }
